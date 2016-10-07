@@ -4,16 +4,26 @@ h1{
 
 h2{
     font-size: 100px;
-    color:fuchsia;
+    color:black;
     text-align: center;
 }
 
 body{
-    background-color: dodgerblue;
+    background-color: white;
 }
 
 img{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#symbol{
+    width:20px;
+    height: 20px;
+}
+
+.narbar-default{
+    background-color:black;
+    position: relative;
 }
