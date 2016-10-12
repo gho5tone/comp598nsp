@@ -27,3 +27,13 @@ img{
     background-color:black;
     position: relative;
 }
+
+strong.itemTitle,.itemTitle{
+    text-align: center;
+    font-size: 20pt;
+}
+
+.itemText{
+    border: 1px;
+    text-align: center;
+}
