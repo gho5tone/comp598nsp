@@ -20,6 +20,7 @@
                 </ul>
             </div>
         </nav>
+  
     </body>
     cart shows items and buy option
     <a href="orderPage.php">click me</a>

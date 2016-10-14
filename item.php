@@ -42,6 +42,7 @@
         </form>
         <?php   
         if(isset($_POST['Add'])){
+            $mysqli = new mysqli("localhost", "bob", "virtue25", "bobenterprise");
             //run/execute mysql query
             echo "<h2>PHP is Fun!</h2>";
         }
