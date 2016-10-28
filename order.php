@@ -16,7 +16,7 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="item.php"><b>Items</b></a></li>
-                    <li><a href="cart.php"><img id="symbol" src= "http://www.inmotionhosting.com/support/images/stories/icons/ecommerce/64_64_empty-cart-dark.png"></a></li>
+                    <li><a href="cart.php"><img id="symbol" src= "IMAGES/cart.png"></a></li>
                 </ul>
             </div>
         </nav>
@@ -48,5 +48,5 @@
         </form>
     </body>
     cart shows items and buy option
-    <a href="orderPage.php">click me</a>
+    <a href="finishOrder.php">click me</a>
 </html>

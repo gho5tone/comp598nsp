@@ -16,7 +16,7 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="item.php"><b>Items</b></a></li>
-                    <li><a href="cart.php"><img id="symbol" src= "http://www.inmotionhosting.com/support/images/stories/icons/ecommerce/64_64_empty-cart-dark.png"></a></li>
+                    <li><a href="cart.php"><img id="symbol" src= "IMAGES/cart.png"></a></li>
                 </ul>
             </div>
         </nav>
@@ -29,7 +29,7 @@
             One of One from the famous Dr's collection, this actual device will send you foward or back in time.  
             <br>*Disclaimer Do not own a cat, we have seen many cases where the cat trips on the settings buttons *
         </div>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
+        <form method="post" action="" >
             <div class="text-center">
             <!--a href="cart.php"-->
                 <br>
@@ -40,9 +40,13 @@
             <!--/a-->
             </div>
         </form>
-        <?php   
+        
+        <?php
         if(isset($_POST['Add'])){
             $mysqli = new mysqli("localhost", "bob", "virtue25", "bobenterprise");
+            $queryInsertGuest = "Insert into bobenterprise.buyers(fName,lName,email) values('guest', 'guest', 'guest@email.com')";
+            $queryInserttoCart = "Insert into bobenterprise.purchase(id, userId) values(1, select id from bobenterprise.buyers where id = '1';)";
+            mysqli_query($connection, $queryInsertGuest ) or die("Query fail: " . mysqli_error());
             //run/execute mysql query
             echo "<h2>PHP is Fun!</h2>";
         }
