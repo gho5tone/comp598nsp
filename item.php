@@ -29,24 +29,29 @@
             One of One from the famous Dr's collection, this actual device will send you foward or back in time.  
             <br>*Disclaimer Do not own a cat, we have seen many cases where the cat trips on the settings buttons *
         </div>
-        <form method="post" action="" >
+        <form method="post">
             <div class="text-center">
             <!--a href="cart.php"-->
                 <br>
                 Price: $69.95
                 <br>
                 <br>
-            <input type="submit" name="Add" value="Add" class="btn btn-primary">
+            <input type="submit" name="submit" value="submit" class="btn btn-primary">
             <!--/a-->
             </div>
         </form>
         
         <?php
-        if(isset($_POST['Add'])){
+        if(isset($_POST['submit'])){
             $mysqli = new mysqli("localhost", "bob", "virtue25", "bobenterprise");
-            $queryInsertGuest = "Insert into bobenterprise.buyers(fName,lName,email) values('guest', 'guest', 'guest@email.com')";
+            if ($mysqli->connect_error) {
+                die("Connection failed: " . $mysqli->connect_error);
+            }
+            $queryInsertGuest = "Insert into bobenterprise.buyers(fName,lName,email) values('guest', 'yahoo', 'guest@email.com')";
+            echo "here";
             $queryInserttoCart = "Insert into bobenterprise.purchase(id, userId) values(1, select id from bobenterprise.buyers where id = '1';)";
-            mysqli_query($connection, $queryInsertGuest ) or die("Query fail: " . mysqli_error());
+            mysqli_query($mysqli, $queryInsertGuest ) or die("Query fail: " . mysqli_error());
+            mysqli_query($mysqli, $queryInserttoCart);
             //run/execute mysql query
             echo "<h2>PHP is Fun!</h2>";
         }
