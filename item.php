@@ -48,8 +48,8 @@
                 die("Connection failed: " . $mysqli->connect_error);
             }
             $queryInsertGuest = "Insert into bobenterprise.buyers(fName,lName,email) values('guest', 'yahoo', 'guest@email.com')";
-            echo "here";
-            $queryInserttoCart = "Insert into bobenterprise.purchase(id, userId) values(1, select id from bobenterprise.buyers where id = '1';)";
+            $queryInserttoCart = "Insert into bobenterprise.purchaseItem(productId, buyersId, numberOfItems, totalPrice) 
+            values((select itemNumber from bobenterprise.items where itemNumber = '1'), (SELECT IDENT_CURRENT('buyers'), '0', (select price from bobenterprise.items where itemNumber = '1')));";
             mysqli_query($mysqli, $queryInsertGuest ) or die("Query fail: " . mysqli_error());
             mysqli_query($mysqli, $queryInserttoCart);
             //run/execute mysql query
