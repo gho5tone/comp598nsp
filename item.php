@@ -36,7 +36,7 @@
                 Price: $69.95
                 <br>
                 <br>
-            <input type="submit" name="submit" value="submit" class="btn btn-primary">
+            <input type="submit" name="submit" value="Add to Cart" class="btn btn-primary">
             <!--/a-->
             </div>
         </form>
@@ -49,9 +49,9 @@
                 die("Connection failed: " . $mysqli->connect_error);
             }
             $queryInsertGuest = "Insert into bobenterprise.buyers(fName,lName,email) values('guest', 'yahoo', 'guest@email.com')";
-            $queryInserttoCart = "Insert into bobenterprise.purchaseItem(productId, buyersId,numberOfItems,totalPrice)
+        $queryInserttoCart = "Insert into bobenterprise.purchaseItem(productId, buyersId,numberOfItems,totalPrice)
 values( 1, (SELECT id FROM buyers ORDER BY id DESC LIMIT 1), 1, (select price from bobenterprise.items where itemNumber = '1'));";
-            $queryCheckCart ="select numberOfItems from bobenterprise.purchaseitem where buyersId = (SELECT id FROM buyers ORDER BY id DESC LIMIT 1);";
+        $queryCheckCart ="select numberOfItems from bobenterprise.purchaseitem where buyersId = (SELECT id FROM buyers ORDER BY id DESC LIMIT 1);";
             mysqli_query($mysqli, $queryInsertGuest ) or die("Query fail: " . mysqli_error());
             mysqli_query($mysqli, $queryInserttoCart);
 //            $_SESSION['cartNum'] = mysqli_query($mysqli, $queryCheckCart);
