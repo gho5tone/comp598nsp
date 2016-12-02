@@ -22,21 +22,21 @@
         </nav>
         <form class="formInputs">
             <div class="form-group row">
-              <label for="example-text-input" class="col-xs-2 col-form-label">Text</label>
+              <label for="example-text-input" class="col-xs-2 col-form-label">Address</label>
               <div class="text-center col-xs-6">
-                  <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+                  <input class="form-control" type="text" placeholder="Address" id="example-text-input">
               </div>
             </div>
             <div class="form-group row">
               <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
               <div class="col-xs-6">
-                <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+                <input class="form-control" type="email" placeholder="bootstrap@example.com" id="example-email-input">
               </div>
             </div>
             <div class="form-group row">
               <label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
               <div class="col-xs-6">
-                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+                <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input">
               </div>
             </div>
 <!--            <div class="form-group row">
@@ -47,6 +47,5 @@
             </div>-->
         </form>
     </body>
-    cart shows items and buy option
-    <a href="finishOrder.php">click me</a>
+    <a href="finishOrder.php">Next Page</a>
 </html>

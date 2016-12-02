@@ -20,6 +20,9 @@
                 </ul>
             </div>
         </nav>
+        <div>
+        <strong>Thank you for ordering the time machine!</strong>
+        </div>
     </body>
-    finishing order page that sends email confirm
+    
 </html>

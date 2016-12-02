@@ -22,6 +22,32 @@
         </nav>
         
     </body>
-    cart shows items and buy option
-    <a href="order.php">click me</a>
+    <div><strong>Your Cart </strong>
+    </div>
+    <form method="get">
+    <?php
+//    session_start();
+//    if(isset($_SESSION['cartNum'])) {
+//      echo "Your session is running " . $_SESSION['cartNum'];
+//    }
+        $mysqli = new mysqli("localhost", "bob", "virtue25", "bobenterprise");
+        if ($mysqli->connect_error) {
+                die("Connection failed: " . $mysqli->connect_error);
+            }
+        $query="select numberOfItems from bobenterprise.purchaseitem where buyersId = (SELECT id FROM buyers ORDER BY id DESC LIMIT 1);";
+        $result = mysqli_query($mysqli, $query);
+        while($row = mysqli_fetch_array($result))
+          {
+          echo '<div class="col-xs-1">
+          Time Machine
+            <input class="form-control" name="cartAmount" type="text" placeholder=" '.$row['numberOfItems']. '"></div>'; //these are the fields that you have stored in your database table employee
+          echo "<br />";
+          }
+        $cartAmt = $_GET['cartAmount'];
+        $update = "update bobenterprise.purchaseItem set numberOfItems= $cartAmt where buyersId = (SELECT id FROM buyers ORDER BY id DESC LIMIT 1)";
+        mysqli_query($mysqli, $update);
+    ?>
+        <strong> Change amount and Press enter then click next page</strong>
+        </form>
+    <a href="order.php">Next Page</a>
 </html>

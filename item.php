@@ -42,18 +42,21 @@
         </form>
         
         <?php
+        session_start();
         if(isset($_POST['submit'])){
             $mysqli = new mysqli("localhost", "bob", "virtue25", "bobenterprise");
             if ($mysqli->connect_error) {
                 die("Connection failed: " . $mysqli->connect_error);
             }
             $queryInsertGuest = "Insert into bobenterprise.buyers(fName,lName,email) values('guest', 'yahoo', 'guest@email.com')";
-            $queryInserttoCart = "Insert into bobenterprise.purchaseItem(productId, buyersId, numberOfItems, totalPrice) 
-            values((select itemNumber from bobenterprise.items where itemNumber = '1'), (SELECT IDENT_CURRENT('buyers'), '0', (select price from bobenterprise.items where itemNumber = '1')));";
+            $queryInserttoCart = "Insert into bobenterprise.purchaseItem(productId, buyersId,numberOfItems,totalPrice)
+values( 1, (SELECT id FROM buyers ORDER BY id DESC LIMIT 1), 1, (select price from bobenterprise.items where itemNumber = '1'));";
+            $queryCheckCart ="select numberOfItems from bobenterprise.purchaseitem where buyersId = (SELECT id FROM buyers ORDER BY id DESC LIMIT 1);";
             mysqli_query($mysqli, $queryInsertGuest ) or die("Query fail: " . mysqli_error());
             mysqli_query($mysqli, $queryInserttoCart);
+//            $_SESSION['cartNum'] = mysqli_query($mysqli, $queryCheckCart);
             //run/execute mysql query
-            echo "<h2>PHP is Fun!</h2>";
+            echo "<br><center><b>Your item is in the cart, check your cart!</center>";
         }
         ?>
     </body>
