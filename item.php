@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['GUEST'] = "guest";
+?>
+
 <!DocType HTML>
 <html lang="en">
     <head>

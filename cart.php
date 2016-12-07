@@ -1,3 +1,12 @@
+<?php
+        session_start();
+        if($_SESSION['GUEST'] != "guest"){
+          header("Location: item.php");  
+            exit();
+        } 
+
+?>
+
 <!DocType HTML>
 <html lang="en">
     <head>
@@ -40,7 +49,7 @@
           {
           echo '<div class="col-xs-1">
           Time Machine
-            <input class="form-control" name="cartAmount" type="text" placeholder=" '.$row['numberOfItems']. '"></div>'; //these are the fields that you have stored in your database table employee
+            <input class="form-control" name="cartAmount" type="text" placeholder=" '.$row['numberOfItems']. '"></div>'; 
           echo "<br />";
           }
         $cartAmt = $_GET['cartAmount'];
