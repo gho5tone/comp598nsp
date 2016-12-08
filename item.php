@@ -1,5 +1,8 @@
 <?php
 session_start();
+      if($_SESSION["GUEST"] != "guest"){
+          ?> <strong color= "red">You didn't add the time machine to cart</strong><?php
+      } 
 $_SESSION['GUEST'] = "guest";
 ?>
 

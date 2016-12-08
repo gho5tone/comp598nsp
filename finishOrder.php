@@ -12,7 +12,7 @@
         <nav class="navbar narbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">BobEnterprise</a>
+                    <a class="navbar-brand" href="index.php">BobEnterprise</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="item.php"><b>Items</b></a></li>
@@ -24,5 +24,9 @@
         <strong>Thank you for ordering the time machine!</strong>
         </div>
     </body>
-    
+        <?php
+        session_unset(); 
+        // destroy the session 
+        session_destroy(); 
+        ?>
 </html>

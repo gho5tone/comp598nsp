@@ -1,7 +1,7 @@
 <?php 
     session_start();
       if($_SESSION["GUEST"] != "guest"){
-          header("Location: item.php");  
+          header("Location: item.php");
       exit();
       } 
 ?>
@@ -57,8 +57,7 @@
     <a href="finishOrder.php">Next Page</a>
     <?php
     session_unset(); 
-
-// destroy the session 
-session_destroy(); 
-?>
+    // destroy the session 
+    session_destroy(); 
+    ?>
 </html>

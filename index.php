@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DocType HTML>
 <html lang="en">
     <head>
@@ -25,4 +28,9 @@
         
         <h2>Respect the Bob</h2>
     </body>
+        <?php
+            session_unset(); 
+            // destroy the session 
+            session_destroy(); 
+        ?>
 </html>
